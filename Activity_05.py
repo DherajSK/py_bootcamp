@@ -1,5 +1,3 @@
 print("Enter 5 numbers")
-x=list()
-for i in range(5):
-    x.append(int(input()))
+x=list(map(int, input("Enter 5 values: ").split()))
 print(sum(x))
