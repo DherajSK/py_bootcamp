@@ -1,0 +1,7 @@
+x=list(input("Enter strings").split())
+x1=sorted(x)
+print(x)
+print(x1)
+x.sort()
+print(x)
+print(x1)
