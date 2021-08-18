@@ -1,13 +1,16 @@
 from itertools import combinations_with_replacement
 from itertools import permutations
 
-def getcombinationsutil(num):
+def getcombinationsutil(num,threeorfour):
     comb1=list()
     for iter1 in range(1,num+1):
-        comb=list(combinations_with_replacement([1, 2, 3], iter1))
-        for iter2 in comb:
-            if(sum(iter2)==num):
-                comb1.append(iter2)
+        if(threeorfour):
+            comb=list(combinations_with_replacement([1, 2, 3], iter1))
+        else:
+            comb=list(combinations_with_replacement([1, 2, 3, 4], iter1))
+            for iter2 in comb:
+                if(sum(iter2)==num):
+                    comb1.append(iter2)
 ##    print(a)
 ##    print("---------------------")
     perm1=list()
@@ -18,7 +21,10 @@ def getcombinationsutil(num):
     return perm1
 
 def getcombinations(freq,keypad,num):
-    permut=getcombinationsutil(freq)
+    if(num==7 or num==9):
+        permut=getcombinationsutil(freq,False)
+    else:
+        permut=getcombinationsutil(freq,True)
 
     keypad=["","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"]
     combin=list()
