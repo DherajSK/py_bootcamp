@@ -8,9 +8,9 @@ def getcombinationsutil(num,threeorfour):
             comb=list(combinations_with_replacement([1, 2, 3], iter1))
         else:
             comb=list(combinations_with_replacement([1, 2, 3, 4], iter1))
-            for iter2 in comb:
-                if(sum(iter2)==num):
-                    comb1.append(iter2)
+        for iter2 in comb:
+            if(sum(iter2)==num):
+                comb1.append(iter2)
 ##    print(a)
 ##    print("---------------------")
     perm1=list()
